@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+option go_package = "./geometry/geometry";
+
+message Sides{
+    int32 length=1;
+    int32 breadth=2;
+}
+
+message Nums{
+    int32 num1=1;
+    int32 num2=2;
+}
+
+message Area{
+    int64 area=1;
+}
+
+message Sum{
+    int64 sum=1;
+}
+
+service Geometry{
+    rpc GetArea(Sides) returns (Area){} 
+    rpc GetSum(Nums) returns(Sum){}
+}

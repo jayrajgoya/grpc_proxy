@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "server.proto";
+
+option go_package = "./thinLizzy/thinLizzy";
+
+message SubmitBody{
+    string Endpoint = 1;
+    string Api=2;
+    optional Sides AreaPayload = 3;
+    optional Nums SumPayload = 4;
+}
+
+message Response{
+    string JobId = 1;
+}
+
+service CallEndpoint{
+    rpc JobSubmit(SubmitBody) returns (Response){} 
+}
